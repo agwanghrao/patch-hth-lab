@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电竞竞猜 · 专题介绍 | webs-esportsbet.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f4f5f7;
+      color: #2c3e4f;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .wrapper {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    /* ----- hero 横幅 ----- */
+    .hero {
+      background: linear-gradient(138deg, #eceef2 0%, #e2e6ed 100%);
+      border: 1px solid #d0d6de;
+      border-radius: 28px;
+      padding: 3rem 2.8rem;
+      margin-bottom: 3.2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 1px 4px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 1.8rem;
+      bottom: 0.8rem;
+      font-size: 0.7rem;
+      color: #9aa7b5;
+      letter-spacing: 1px;
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1f2b38;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #546e7a;
+      border-left: 4px solid #8f9fae;
+      padding-left: 1rem;
+      margin-top: 0.6rem;
+      max-width: 580px;
+    }
+
+    /* ----- 专题卡片 ----- */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid #dce2e9;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+      padding: 2rem 2.2rem;
+      flex: 1 1 280px;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+      color: #1f2b38;
+    }
+
+    .card h2 span {
+      display: inline-block;
+      background: #eef0f3;
+      padding: 0 0.4rem;
+      border-radius: 6px;
+      font-weight: 400;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #3c4d5e;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: #f0f2f5;
+      border-radius: 6px;
+      padding: 0.15rem 0.4rem;
+      color: #1c2b39;
+      font-weight: 450;
+    }
+
+    /* ----- 背景说明 / 站点介绍 段落 (融入卡片) ----- */
+    .context-section {
+      background: #ffffff;
+      border: 1px solid #dce2e9;
+      border-radius: 24px;
+      padding: 2.2rem 2.5rem;
+      margin-bottom: 2.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .context-text {
+      flex: 2 1 300px;
+    }
+
+    .context-text h3 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #1f2b38;
+      border-bottom: 2px solid #e5e9ef;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .context-text p {
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .context-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-badge {
+      flex: 0 0 180px;
+      background: #f2f4f7;
+      border-radius: 20px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid #dde2e9;
+      text-align: center;
+      align-self: center;
+    }
+
+    .meta-badge .badge-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #6b7f90;
+      margin-bottom: 0.4rem;
+    }
+
+    .meta-badge .badge-value {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1f2b38;
+      word-break: break-word;
+    }
+
+    /* ----- 场景 / FAQ 摘要 (混合区块) ----- */
+    .mixed-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .mixed-item {
+      background: #ffffff;
+      border: 1px solid #dce2e9;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      flex: 1 1 260px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.01);
+    }
+
+    .mixed-item h4 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.9rem;
+      color: #1f2b38;
+    }
+
+    .mixed-item p,
+    .mixed-item .faq-line {
+      font-size: 0.98rem;
+      color: #3c4d5e;
+      margin-bottom: 0.4rem;
+    }
+
+    .mixed-item .faq-line strong {
+      font-weight: 550;
+      color: #1f2b38;
+    }
+
+    .mixed-item .faq-line:last-child {
+      margin-bottom: 0;
+    }
+
+    .divider-dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: #b6c2ce;
+      border-radius: 50%;
+      margin: 0 0.4rem 0.15rem;
+    }
+
+    /* ----- 页尾访问提示 ----- */
+    .footer-note {
+      border-top: 1px solid #d9dfe6;
+      padding-top: 2.2rem;
+      margin-top: 1.2rem;
+      text-align: left;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .footer-note .foot-text {
+      color: #4e6377;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      flex: 1 1 240px;
+    }
+
+    .footer-note .foot-text a {
+      color: #1f2b38;
+      text-decoration: none;
+      border-bottom: 1.5px solid #b7c3d0;
+      transition: border-color 0.2s;
+      font-weight: 450;
+    }
+
+    .footer-note .foot-text a:hover {
+      border-bottom-color: #1f2b38;
+    }
+
+    .footer-meta {
+      font-size: 0.85rem;
+      color: #8295a6;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .hero {
+        padding: 2rem 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero .subhead {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 1.5rem 1.5rem;
+      }
+      .context-section {
+        padding: 1.8rem 1.5rem;
+      }
+      .meta-badge {
+        flex: 1 1 100%;
+      }
+      .mixed-item {
+        padding: 1.5rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .footer-note {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <!-- hero 横幅 -->
+  <div class="hero">
+    <h1>电竞竞猜 · 站点专题</h1>
+    <div class="subhead">围绕 <span class="highlight">webs-esportsbet.com</span> 构建的专题介绍<br>从结构与可信角度梳理平台背景与使用场景</div>
+  </div>
+
+  <!-- 第一段：站点介绍 + 背景说明 (混合在卡片与语境区块) -->
+  <div class="feature-grid">
+    <div class="card">
+      <h2><span>⚙</span> 平台定位</h2>
+      <p>面向电竞爱好者的竞猜信息站，提供赛事数据、赔率参考及社区讨论空间。界面设计强调功能性，<span class="highlight">不包含投注执行模块</span>，聚焦于辅助用户理解赛事动态。</p>
+      <p>内容覆盖多款主流电竞项目，信息更新频率与大型赛事周期同步。</p>
+    </div>
+    <div class="card">
+      <h2><span>📋</span> 可信说明</h2>
+      <p>所有公开数据均来源于官方赛事渠道或经核实的第三方统计。站内不植入任何自动跳转脚本，不收集个人敏感信息。</p>
+      <p>运营方持续对信息源进行交叉比对，并在页面显著位置标注数据时效。</p>
+    </div>
+    <div class="card">
+      <h2><span>🧩</span> 内容结构</h2>
+      <p>采用模块化分类：赛事日历、战队档案、历史对阵、赔率趋势。每个模块均附有简短的方法说明，帮助新用户快速理解指标含义。</p>
+      <p>不设论坛或评论区，但提供公开的反馈联络方式。</p>
+    </div>
+  </div>
+
+  <!-- 第二段：背景说明 + 站点介绍 细化 (context-section) -->
+  <div class="context-section">
+    <div class="context-text">
+      <h3>背景与使用原则</h3>
+      <p><strong>电竞竞猜</strong> 作为一种伴随赛事衍生的信息交互方式，其核心在于对赛果、选手状态、版本更新的综合判断。网站 <a href="https://webs-esportsbet.com">电竞竞猜</a> 尝试以中性视角呈现这些变量，引导用户建立基于数据而非直觉的认知习惯。</p>
+      <p>所有内容均以「信息参考」为出发点，不暗示任何投注策略或收益预期。页面内嵌的赔率走势图仅反映市场公开数值，不构成预测结论。</p>
+      <p>运营团队由长期关注电竞赛事的编辑与数据爱好者组成，持续优化分类逻辑与展示细节。网站无广告联盟追踪代码，访问记录仅用于改善信息架构。</p>
+    </div>
+    <div class="meta-badge">
+      <div class="badge-label">信息基准</div>
+      <div class="badge-value">公开·可溯源</div>
+      <div style="margin-top: 0.8rem; font-size: 0.75rem; color: #7a8d9e;">非投资建议</div>
+    </div>
+  </div>
+
+  <!-- 第三段：自然介绍 + 场景/FAQ 摘要 (mixed-section) -->
+  <div class="mixed-section">
+    <div class="mixed-item">
+      <h4>使用场景一例</h4>
+      <p>观赛前查阅近期对阵数据、选手英雄池及版本胜率，形成自己的分析笔记。许多用户将 <strong>电竞竞猜</strong> 栏目作为赛前信息聚合页，避免在多个平台间反复切换。</p>
+    </div>
+    <div class="mixed-item">
+      <h4>FAQ 摘要</h4>
+      <div class="faq-line"><strong>Q：</strong>数据多久更新？ <span class="divider-dot"></span> <strong>A：</strong>主要赛事结束后 30 分钟内。</div>
+      <div class="faq-line"><strong>Q：</strong>是否包含历史赔率？ <span class="divider-dot"></span> <strong>A：</strong>保留近 90 天市场平均数据。</div>
+      <div class="faq-line"><strong>Q：</strong>需要注册吗？ <span class="divider-dot"></span> <strong>A：</strong>浏览所有内容无需注册。</div>
+    </div>
+    <div class="mixed-item">
+      <h4>站点特点</h4>
+      <p>采用浅色主题与低饱和度配色，降低长时间浏览的视觉疲劳。所有卡片均配备细边框与柔和阴影，层级清晰。移动端自适应布局，优先保证数据表格的可读性。</p>
+    </div>
+  </div>
+
+  <!-- 页尾访问提示 -->
+  <div class="footer-note">
+    <div class="foot-text">
+      若需进一步了解栏目结构与最新赛事信息，可前往 <a href="https://webs-esportsbet.com">电竞竞猜</a> 浏览完整内容。页面不设自动刷新，所有链接均指向信息页面。
+    </div>
+    <div class="footer-meta">
+      · 专题页 · 介绍性内容
+    </div>
+  </div>
+</div>
+</body>
+</html>
